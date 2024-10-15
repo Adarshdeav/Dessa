@@ -16,7 +16,11 @@
   WARN_MSG:
     process.env.WARN_MSG === undefined ? "Ok bie" : process.env.WARN_MSG,
   ANTIJID: process.env.ANTIJID === undefined ? "" : process.env.ANTIJID,
-  STICKER_PACKNAME:
+ BOT_INFO:
+      process.env.BOT_INFO || 'DESSA;DEAVO ;917907738112;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
+  AUDIO_DATA:
+      process.env.AUDIO_DATA || 'DESSA;DEAVO;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
+   STICKER_PACKNAME:
     process.env.STICKER_PACKNAME === undefined
       ? "DEAVO,Queen dessa"
       : process.env.STICKER_PACKNAME,
