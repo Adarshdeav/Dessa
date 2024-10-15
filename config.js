@@ -1,37 +1,69 @@
-},
-        }),
-  NO_ONLINE:
-    process.env.NO_ONLINE === undefined
-      ? true
-      : convertToBool(process.env.NO_ONLINE),
-  CLR_SESSION:
-    process.env.CLR_SESSION === undefined
-      ? false
-      : convertToBool(process.env.CLR_SESSION),
-  SUDO: process.env.SUDO === undefined ? false : process.env.SUDO,
-  DEBUG: DEBUG,
-  REMOVEBG:
-    process.env.REMOVEBG_KEY === undefined ? "false" : process.env.REMOVEBG_KEY,
-  WARN_COUNT: process.env.WARN_COUNT === undefined ? 3 : process.env.WARN_COUNT,
-  WARN_MSG:
-    process.env.WARN_MSG === undefined ? "Ok bie" : process.env.WARN_MSG,
-  ANTIJID: process.env.ANTIJID === undefined ? "" : process.env.ANTIJID,
- BOT_INFO:
-      process.env.BOT_INFO || 'DESSA;DEAVO ;917907738112;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
-  AUDIO_DATA:
-      process.env.AUDIO_DATA || 'DESSA;DEAVO;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
-   STICKER_PACKNAME:
-    process.env.STICKER_PACKNAME === undefined
-      ? "DEAVO,Queen dessa"
-      : process.env.STICKER_PACKNAME,
-  BRAINSHOP:
-    process.env.BRAINSHOP === undefined
-      ? "159501,6pq8dPiYt7PdqHz3"
-      : process.env.BRAINSHOP,
-  DIS_BOT:
-    process.env.DISABLE_BOT === undefined ? "null" : process.env.DISABLE_BOT,
-  FIND_API_KEY:
-    process.env.FIND_API_KEY === undefined
-      ? "null"
-      : process.env.FIND_API_KEY,
-      }
+const { Sequelize } = require('sequelize');
+const fs = require('fs');
+
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env', override: true });
+
+const convertToBool = (text, fault = 'true') => text === fault;
+const toBool = (x) => (x && x.toLowerCase() === 'true') || false;
+
+global.apikey = { 'https://api.adithyan.xyz': 'free' };
+global.apiUrl = 'https://hermit-api.koyeb.app/';
+
+const DATABASE_URL = process.env.DATABASE_URL || './database.db';
+process.env.NODE_OPTIONS = '--max_old_space_size=2560';
+
+const DEBUG = convertToBool(process.env.DEBUG, 'true');
+
+module.exports = {
+  VERSION: 'v4.4.4',
+  SESSION_ID: process.env.SESSION_ID || '',
+  MODE: (process.env.MODE || 'private').toLowerCase(),
+  HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
+  SEND_READ: toBool(process.env.READ_COMMAND),
+  READ_MSG: toBool(process.env.READ_MSG),
+  MSG_LOG: convertToBool(process.env.LOG_MSG),
+  BLOCKCHAT: process.env.BLOCK_CHAT || false,
+  LANG: (process.env.LANGUAGE || 'EN').toUpperCase(),
+  ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE),
+  BOT_NAME: process.env.BOT_NAME || 'DESSA',
+  AUTOMUTE_MSG: process.env.AUTOMUTE_MSG || '_Group automuted!_\n_(Change this by setting var AUTOMUTE_MSG)_',
+  AUTOUNMUTE_MSG: process.env.AUTOUNMUTE_MSG || '_Group autounmuted!_\n_(Change this by setting var AUTOUNMUTE_MSG)_',
+  ANTILINK_MSG: process.env.ANTILINK_MSG || '_Link Not Allowed!_\n_(Change this by setting var ANTILINK_MSG)_',
+  BOT_INFO: process.env.BOT_INFO || 'DESSA;DEAVO;917907738112;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
+  AUDIO_DATA: process.env.AUDIO_DATA || 'DESSA;DEAVO;https://cdn.ironman.my.id/i/9e9ofk.jpeg',
+  STICKER_DATA: process.env.STICKER_DATA || 'DESSA🤍;DEAVO👀',
+  ERROR_MESSAGE: toBool(process.env.ERROR_MESSAGE, 'true'),
+  SONG_THUMBNAIL: toBool(process.env.SONG_THUMBNAIL),
+  WARN: process.env.WARN || '4',
+  REJECT_CALL: toBool(process.env.REJECT_CALL),
+  KOYEB_API_KEY: process.env.KOYEB_API_KEY || false,
+  KOYEB_APP_NAME: process.env.KOYEB_APP_NAME || '',
+  RENDER_API: process.env.RENDER_API || false,
+  RENDER_NAME: process.env.RENDER_NAME || '',
+  TERMUX_VPS: toBool(process.env.TERMUX || process.env.VPS),
+  AUTO_STATUS_VIEW: toBool(process.env.AUTO_STATUS_VIEW),
+  APIKEY: process.env.APIKEY || 'free',
+  AUTH_FILE: process.env.AUTH_FILE || false,
+  START_MSG: toBool(process.env.START_MSG || 'true'),
+  DATABASE_URL: DATABASE_URL,
+  DATABASE: DATABASE_URL === './database.db' 
+    ? new Sequelize({
+        dialect: 'sqlite',
+        storage: DATABASE_URL,
+        logging: false,
+      }) 
+    : new Sequelize(DATABASE_URL, {
+        dialect: 'postgres',
+        ssl: true,
+        protocol: 'postgres',
+        dialectOptions: {
+          native: true,
+          ssl: { require: true, rejectUnauthorized: false },
+        },
+        logging: false,
+      }),
+  RBG_API_KEY: process.env.REMOVE_BG_API_KEY || false,
+  BRAIN_ID: process.env.BRAIN_ID || 'bid=168613&key=EfbnX54Iy9PFIFp3',
+  SUDO: process.env.SUDO || '0,0',
+  DEBUG: DEBUG
+};
