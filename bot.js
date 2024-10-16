@@ -1,7 +1,9 @@
-/* Copyright (C) 2020 Yusuf Usta.
+/* Copyright (C) 2024 Dessa
+License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
 
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 WhatsAsena - Yusuf Usta
 */
