@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: jarvis-md
+    name: dessa
     env: docker
     branch: main
-    repo: https://github.com/Loki-Xer/jarvis-md.git
+    repo: https://github.com/Adarshdeav/Dessa.git
     dockerfilePath: Dockerfile
     plan: free
     autoDeploy: false
