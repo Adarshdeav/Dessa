@@ -14,7 +14,9 @@ Sathanic based bot &lt;arm>
 </p>
 
 <img src="https://i.imgur.com/dBaSKWF.gif" height="60" width="100%">
+
 https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=35&pause=750&color=952323&width=435&lines=Hello;Welcome+%F0%9F%98%8A+to+Dessa+MD+bot;This+is+our+official+repository+;Updated+on+November+2024;Dessa+team+is+offering+the+best;For+this+bot;Fork+and+give+a+star)](https://git.io/typing-svg
+ 
    [`ℹ️Contact Owner`](https://wa.me/917907738112)
 
 <a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=QUEEN+DESSA+WHATSAPP+BOT" alt="">
