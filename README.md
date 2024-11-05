@@ -16,3 +16,5 @@ Sathanic based bot &lt;arm>
 <img src="https://i.imgur.com/dBaSKWF.gif" height="60" width="100%">
 
    [`ℹ️Contact Owner`](https://wa.me/917907738112)
+
+<a href="#"><img src="http://readme-typing-svg.herokuapp.com?color=ff00ab&center=true&vCenter=true&multiline=false&lines=QUEEN+DESSA+WHATSAPP+BOT" alt="">
