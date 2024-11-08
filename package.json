@@ -40,23 +40,23 @@
         "x-asena": "^1.0.1"
     },
     "scripts": {
-    "start": "pm2 start index.js --name X-AsenaDuplicated && pm2 logs X-AsenaDuplicated",
+    "start": "pm2 start index.js --name Dessa-Bot-Md && pm2 logs Dessa-Bot-Md",
     "code": "node lib/pcode.js"
   },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Viper-X0/X-AsenaDuplicated.git"
+        "url": "git+https://github.com/Adarshdeav/Dessa.git"
     },
     "keywords": [
         "bot",
         "whatsapp"
     ],
-    "author": "Viper-X0",
+    "author": "Deavo",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Viper-X0/X-AsenaDuplicated/issues"
+        "url": "https://github.com/Adarshdeav/Dessa.git/issues"
     },
-    "homepage": "https://github.com/X-Electra/X-Asena#readme",
+    "homepage": "https://github.com/Adarshdeav/Dessa.git#readme",
     "devDependencies": {
     "@eslint/js": "^9.4.0",
     "eslint": "^9.4.0",
