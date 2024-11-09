@@ -30,7 +30,7 @@ module.exports = {
   BOT_NAME: process.env.BOT_NAME || "DESSS-BOT-MD",
   AUTO_READ: toBool(process.env.AUTO_READ) || false,
   AUTO_STATUS_READ: toBool(process.env.AUTO_STATUS_READ) || false,
-  PROCESSNAME: process.env.PROCESSNAME || "x-asena",
+  PROCESSNAME: process.env.PROCESSNAME || "dessa",
   WORK_TYPE: process.env.WORK_TYPE || "private",
   SESSION_URL: process.env.SESSION_URL || "",
   DELETED_LOG: toBool(process.env.DELETED_LOG) || false,
